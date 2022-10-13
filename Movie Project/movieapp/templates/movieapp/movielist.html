@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div>
+    <div class = "row">
+
+        {% for movie in movies %}
+
+        <div class = "col-sm-4 col-md-3 col-lg-2 col-xl-2 mt-4">
+            <div class = "card d-flex  align-items-center justify-content-between fw-bold  rounded text-center  text-white align-middle text-capitalize"
+                 style = "width: 10rem;height:18rem;background-color:black;">
+                <a href = "{% url 'movieapp:display' movie.id %}">
+                    <img src = "{{movie.image.url}}" class = "card-img-top" height = "200px" width = "20rem">
+                </a>
+                <div>
+                    <a href = "{% url 'movieapp:display' movie.id %}" class="link-light">
+                        <h5 class = "card-title">{{movie.name}}</h5>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+
+</div>
+
+{% endblock %}

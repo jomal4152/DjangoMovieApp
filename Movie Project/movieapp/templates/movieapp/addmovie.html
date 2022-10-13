@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class = "row text-white mt-5">
+
+    <div class = "jumbotron">
+
+        <h1 class = "display-4">Add New Movies</h1>
+
+        <form action = "" method = "POST" enctype = "multipart/form-data">
+            {% csrf_token %}
+            <div class = "form-group mt-3">
+                <label for = "exampleInputname">Movie Name</label>
+                <input type = "text" name = "name" class = "form-control" id = "exampleInputname"
+                       placeholder = "Enter movie name">
+            </div>
+
+            <div class = "form-group mt-3">
+                <label for = "exampleInputdesc">Movie Description</label>
+                <input type = "text" name = "description" class = "form-control" id = "exampleInputdesc"
+                       placeholder = "Enter movie description">
+            </div>
+            <div class = "row mt-3">
+                <div class = " col form-group">
+                    <label for = "exampleInputyear">Movie released year</label>
+                    <input type = "text" name = "year" class = "form-control" id = "exampleInputyear"
+                           placeholder = "Enter year">
+                </div>
+                <br>
+                <div class = " col form-group mt-4">
+                    <label for = "exampleFormControlFile1">Movie image file input</label>
+                    <input type = "file" name = "image" class = "form-control-file" id = "exampleFormControlFile1">
+                </div>
+            </div>
+            <hr class = "my-4">
+            <input type = "submit" value = "Submit" id = "">
+        </form>
+    </div>
+</div>
+
+{% endblock %}
